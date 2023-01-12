@@ -1,0 +1,18 @@
+.container{
+    margin-top: 60px;
+}
+.content{
+    margin-bottom: 30px;
+}
+
+.list-group-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button:active .btn{
+    cursor: pointer;
+}
+.card{
+    border: none;
+}

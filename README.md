@@ -1,5 +1,10 @@
 # TodoList
 
+<div style="display: inline_block">
+    <img aling="center" src="./src/assets/image/todoList.PNG" alt="image to project">
+</div>
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server

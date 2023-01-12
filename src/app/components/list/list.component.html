@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="content">
+    <div class="mb-3 row">
+      <label for="table-filtering-search" class="col-sm-2 col-form-label">
+        Adicionar Tarefa:
+      </label>
+      <div class="col-sm-7">
+        <input
+          id="table-filtering-search"
+          class="form-control"
+          type="text"
+          placeholder="digite uma tarefa"
+          #input
+          required
+        />
+      </div>
+      <div class="col-sm-3">
+        <button class="btn btn-primary" (click)="addTarefa(input.value); input.value =''">
+          Adicionar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="width: 90%" *ngIf="!inputVazio; else templateName">
+    <ul class="list-group" *ngIf="lista.length > 0; else listaFazia">
+      <li class="list-group-item" *ngFor="let tarefa of lista; index as i">
+        <div>
+          <input
+            class="form-check-input me-1"
+            type="checkbox"
+            value=""
+            id="{{ tarefa }}"
+          />
+          <label class="form-check-label" for="{{ tarefa }}">
+            {{ tarefa }}
+          </label>
+        </div>
+        <div class="button form-group">
+          <button class="btn btn-primary" (click)="onDelete(i)">Excluir</button>
+        </div>
+      </li>
+    </ul>
+    <ng-template #listaFazia>
+      <div class="alert alert-primary" role="alert">
+        <p><strong>A lista está vazia!</strong>Adicione itens a Lista.</p>
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #templateName>
+    <div class="alert alert-danger" role="alert">
+      <p><strong>Digite uma tarefa para adicionar a lista!</strong></p>
+    </div>
+  </ng-template>
+</div>
